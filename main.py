@@ -205,11 +205,11 @@ class MainHandler(BaseHandler):
 	    del self.time_params['totalTime_hide']
     
     def generate(self):
-	output = '<div itemscope itemtype="http://schema.org/Recipe">\n'
+	output = '<div itemscope itemtype="http://schema.org/Recipe">\n<p>\n'
 	
 	self.isoifyTimes()
 	
-	output = output + self.formatDictionary(self.general_params)
+	output = output + self.formatDictionary(self.general_params) + '\n</p>'
 	
 	printNutrition = False
 	for v in self.nutrition_params.values():
@@ -217,13 +217,13 @@ class MainHandler(BaseHandler):
 		printNutrition = True
 	
 	if printNutrition:
-	    output = output + '<div itemprop="nutrition" itemscope itemtype="http://schema.org/NutritionInformation">\n'
+	    output = output + '\n<div itemprop="nutrition" itemscope itemtype="http://schema.org/NutritionInformation">\n<p>\n'
 	    output = output + self.formatDictionary(self.nutrition_params)
-	    output = output + '</div>\n'
+	    output = output + '</p>\n</div>\n'
 	
-	output = output + self.formatDictionary(self.details_params)
+	output = output + '<p>\n' + self.formatDictionary(self.details_params) + '</p>'
 	
-	output = output + '</div>'
+	output = output + '\n</div>'
 	
 	output.replace('<','&lt;')
 	output.replace('>','&gt;')
@@ -251,16 +251,16 @@ class MainHandler(BaseHandler):
 		    if myDict[k + '_hide'] == 'checked':
 			output = output + '<meta itemprop="' + k + '" content="' + v + '">\n'
 		    elif k == 'image':
-			output = output + '<img itemprop="image" src="' + v + '" />'
+			output = output + '<img itemprop="image" src="' + v + '" /></br>'
 		    elif k == 'ingredients':
 			ingredients = v.split('\r\n')
 			for ingredient in ingredients:
 			    ingredient.replace('\r','')
-			    output = output + '<span itemprop="' + k + '">' + ingredient + '</span>\n'
+			    output = output + '<span itemprop="' + k + '">' + ingredient + '</span></br>\n'
 		    else:
-			output = output + '<span itemprop="' + k + '">' + v + '</span>\n'
+			output = output + '<span itemprop="' + k + '">' + v + '</span></br>\n'
 		else:
-		    output = output + '<span itemprop="' + k + '">' + v + '</span>\n'
+		    output = output + '<span itemprop="' + k + '">' + v + '</span></br>\n'
 
     
 	return output
