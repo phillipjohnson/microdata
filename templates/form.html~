@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            .formtable
+            {
+	width:80%;
+            }
+            .checkboxcol
+            {
+	text-align: center;
+            }
+            input
+            {
+            
+            }
+            .formfield
+            {
+	width:100%;
+            }
+            textarea
+            {
+	width:100%;
+            }
+            .output
+            {
+                width:80%;
+            }
+        </style>
+
+        <link rel="stylesheet" type="text/css" href="http://www.siftandwhisk.com/site.css">
+        
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Amatic+SC:normal,400,700|Cabin:normal,400,400italic,500,500italic,600,600italic,700,700italic|Lora:normal|Muli:normal,300,300italic,400,400italic"/>
+
+    </head>
+    <body>
+        <form method="POST">
+        <div id="Instructions">
+            <p>
+            Enter the details of your recipe below. Feel free to leave any fields blank that you don't want to include. 
+            If you'd like to include a piece of information for search engines to see, but you don't want it to display
+            on your website, simply check the associated "hide" box for that piece of data.
+            </p>
+        </div>
+        <div>
+            <table class="formtable">
+	<tr><td><td><td>Hidden?
+	<tr><th colspan=2>General
+	<tr><td>URL
+	<td><input class="formfield" name="url" title="The URL of your recipe." value="{{url}}">
+	<td class="checkboxcol"><input type="checkbox" name="url_hide" {{url_hide}}>
+	<tr><td>Description
+	<td><input class="formfield" name="description" title="A short description of your recipe." value="{{description}}">
+	<td class="checkboxcol"><input type="checkbox" name="description_hide" {{description_hide}}>
+	<tr><td>Image
+	<td><input class="formfield" name="image" title="The URL of an image to associate with your recipe." value="{{image}}">
+	<td class="checkboxcol"><input type="checkbox" name="image_hide" {{image_hide}}>
+	<tr><td>Author
+	<td><input class="formfield" name="author" title="Your name or pseudonym." value="{{author}}">
+	<td class="checkboxcol"><input type="checkbox" name="author_hide" {{author_hide}}>
+	<tr><th colspan=2>Recipe Details
+	<tr><td>Cooking Method
+	<td><input class="formfield" name="cookingMethod" title="Method of cooking such as baking, frying, etc." value="{{cookingMethod}}">
+	<td class="checkboxcol"><input type="checkbox" name="cookingMethod_hide" {{cookingMethod_hide}}>
+	<tr><td>Category
+	<td><input class="formfield" name="recipeCategory" title="The category of the recipe such as appetizer or entree." value="{{recipeCategory}}">
+	<td class="checkboxcol"><input type="checkbox" name="recipeCategory_hide" {{recipeCategory_hide}}>
+	<tr><td>Cuisine
+	<td><input class="formfield" name="recipeCuisine" title="The cusine such as French or Ethiopian." value="{{recipeCuisine}}">
+	<td class="checkboxcol"><input type="checkbox" name="recipeCuisine_hide" {{recipeCuisine_hide}}>
+	<tr><td>Prep Time
+	<td>
+	    Hours: <input class="formfield" name="prepTimeHours" title="The time it takes to prepare the recipe." value="{{prepTimeHours}}">
+	    Minutes: <input class="formfield" name="prepTimeMinutes" title="The time it takes to prepare the recipe." value="{{prepTimeMinutes}}">
+	<td class="checkboxcol"><input type="checkbox" name="prepTime_hide" {{prepTime_hide}}>
+	<tr><td>Cooking Time
+	<td>
+	    Hours: <input class="formfield" name="cookTimeHours" title="The time it takes to cook the food." value="{{cookTimeHours}}">
+	    Minutes: <input class="formfield" name="cookTimeMinutes" title="The time it takes to cook the food." value="{{cookTimeMinutes}}">
+	<td class="checkboxcol"><input type="checkbox" name="cookTime_hide" {{cookTime_hide}}>
+	<tr><td>Total Time
+	<td>
+	    Hours: <input class="formfield" style="width: 30%;" name="totalTimeHours" title="The total time it takes to prepare and cook the recipe." value="{{totalTimeHours}}"> 
+	    Minutes: <input class="formfield" style="width: 30%;" name="totalTimeMinutes" title="The total time it takes to prepare and cook the recipe." value="{{totalTimeMinutes}}">
+	<td class="checkboxcol"><input type="checkbox" name="totalTime_hide" {{totalTime_hide}}>
+	<tr><td>Total Time
+	<td><input class="formfield" name="recipeYield" title="The quantity produced by the recipe for example, number of people served, number of servings, etc)." value="{{recipeYield}}">
+	<td class="checkboxcol"><input type="checkbox" name="recipeYield_hide" {{recipeYield_hide}}>
+	<tr><th colspan=3>Nutritional Information
+	<tr><td>Serving size
+	<td><input class="formfield" name="servingSize" title="The serving size, in terms of the number of volume or mass" value="{{servingSize}}">
+	<td class="checkboxcol"><input type="checkbox" name="servingSize_hide" {{servingSize_hide}}>
+	<tr><td>Calories
+	<td><input class="formfield" name="calories" title="The number of calories." value="{{calories}}">
+	<td class="checkboxcol"><input type="checkbox" name="calories_hide" {{calories_hide}}>
+	<tr><td>Carbs (g)
+	<td><input class="formfield" name="carbohydrateContent" title="The number of grams of carbohydrates" value="{{carbohydrateContent}}">
+	<td class="checkboxcol"><input type="checkbox" name="carbohydrateContent_hide" {{carbohydrateContent_hide}}>
+	<tr><td>Fiber (g)
+	<td><input class="formfield" name="fiberContent" title="The number of grams of fiber" value="{{fiberContent}}">
+	<td class="checkboxcol"><input type="checkbox" name="fiberContent_hide" {{fiberContent_hide}}>
+	<tr><td>Sugar (g)
+	<td><input class="formfield" name="sugarContent" title="The number of grams of sugar" value="{{sugarContent}}">
+	<td class="checkboxcol"><input type="checkbox" name="sugarContent_hide" {{sugarContent_hide}}>
+	<tr><td>Fat (g)
+	<td><input class="formfield" name="fatContent" title="The number of grams of fat" value="{{fatContent}}">
+	<td class="checkboxcol"><input type="checkbox" name="fatContent_hide" {{fatContent_hide}}>
+	<tr><td>Saturated fat (g)
+	<td><input class="formfield" name="saturatedFatContent" title="The number of grams of saturated fat" value="{{saturatedFatContent}}">
+	<td class="checkboxcol"><input type="checkbox" name="saturatedFatContent_hide" {{saturatedFatContent_hide}}>
+	<tr><td>Unsaturated fat (g)
+	<td><input class="formfield" name="unsaturatedFatContent" title="The number of grams of unsaturated fat" value="{{unsaturatedFatContent}}">
+	<td class="checkboxcol"><input type="checkbox" name="unsaturatedFatContent_hide" {{unsaturatedFatContent_hide}}>
+	<tr><td>Trans fat (g)
+	<td><input class="formfield" name="transFatContent" title="The number of grams of trans fat" value="{{transFatContent}}">
+	<td class="checkboxcol"><input type="checkbox" name="transFatContent_hide" {{transFatContent_hide}}>
+	<tr><td>Cholesterol (mg)
+	<td><input class="formfield" name="cholesterolContent" title="The number of milligrams of cholesterol." value="{{cholesterolContent}}">
+	<td class="checkboxcol"><input type="checkbox" name="cholesterolContent_hide" {{cholesterolContent_hide}}>
+	<tr><td>Protein (g)
+	<td><input class="formfield" name="proteinContent" title="The number of grams of protein" value="{{proteinContent}}">
+	<td class="checkboxcol"><input type="checkbox" name="proteinContent_hide" {{proteinContent_hide}}>
+	<tr><td>Sodium (mg)
+	<td><input class="formfield" name="sodiumContent" title="The number of milligrams of sodium" value="{{sodiumContent}}">
+	<td class="checkboxcol"><input type="checkbox" name="sodiumContent_hide" {{sodiumContent_hide}}>
+	<tr><th colspan=2>Ingredients
+	<tr><td colspan=2>
+	        Place each ingredient on a new line.</br>
+	    <textarea name="ingredients" title="A list of ingredients" rows="5" >{{ingredients}}</textarea>
+	</td>
+	<td class="checkboxcol"><input type="checkbox" name="ingedients_hide" {{ingredients_hide}}>
+	<tr><th colspan=2>Instructions
+	<tr><td colspan=2>
+	    <textarea name="instructions" title="The instructions or text of the recipe." rows="5" >{{instructions}}</textarea>
+	</td>
+	<td class="checkboxcol"><input type="checkbox" name="instructions_hide" {{instructions_hide}}>
+	<tr><th colspan=2>Advanced
+	<tr><td>Keywords
+	<td><input class="formfield" name="keywords" title="Keywords or tags for your recipe." value="{{keywords}}">
+	<td class="checkboxcol"><input type="checkbox" name="keywords_hide" {{keywords_hide}}>
+            </table>
+            <br>
+            <input type=submit value="Click to generate your microdata">
+        </div>
+        </form>
+        <div id="output">
+        <h2>Generated Microdata:</h2><br>
+            <textarea class="output" name="output" rows="20">{{output}}</textarea>
+        </div>
+    </body>
+</html>
